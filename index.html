@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive newsletter signup modal demo.">
+  <title>Newsletter Signup Modal</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <nav class="topbar" aria-label="Main navigation">
+      <a class="brand" href="#" aria-label="Northstar home">northstar<span>.</span></a>
+      <a class="top-link" href="#about">Why Northstar?</a>
+    </nav>
+
+    <section class="hero" id="about">
+      <div class="eyebrow"><span class="eyebrow-dot"></span> A little signal in a noisy world</div>
+      <h1>Good ideas.<br><em>Delivered thoughtfully.</em></h1>
+      <p class="hero-copy">A short, considered newsletter about design, creativity, and making things that matter. No noise, just the good stuff.</p>
+      <button class="primary-button" id="open-modal" type="button">Join the newsletter <span aria-hidden="true">↗</span></button>
+      <p class="microcopy">Free forever · Unsubscribe whenever you like</p>
+    </section>
+
+    <section class="feature-grid" aria-label="Newsletter benefits">
+      <article class="feature-card"><span class="feature-number">01</span><h2>Ideas worth keeping</h2><p>Fresh perspectives and useful links, curated with care.</p></article>
+      <article class="feature-card"><span class="feature-number">02</span><h2>Made for your inbox</h2><p>One thoughtful note at a time. No daily deluge.</p></article>
+      <article class="feature-card"><span class="feature-number">03</span><h2>Always your choice</h2><p>You're in control. Leave the list with one click.</p></article>
+    </section>
+
+    <footer class="footer"><span>© <span id="year"></span> Northstar Notes</span><span>Made with intention.</span></footer>
+  </main>
+
+  <div class="modal-overlay" id="modal-overlay" hidden>
+    <section class="signup-modal" id="signup-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-description" tabindex="-1">
+      <button class="close-button" id="close-modal" type="button" aria-label="Close signup dialog">×</button>
+      <div class="modal-art" aria-hidden="true">
+        <div class="sun"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <span class="art-star star-one">✳</span><span class="art-star star-two">✦</span>
+        <span class="art-label">NORTHSTAR NOTES / VOL. 01</span>
+      </div>
+      <div class="modal-content">
+        <p class="modal-kicker">A note worth opening</p>
+        <h2 id="modal-title">A brighter inbox<br><em>starts here.</em></h2>
+        <p id="modal-description" class="modal-description">Get our best ideas, useful finds, and creative sparks delivered occasionally. Always thoughtful, never spammy.</p>
+        <form id="signup-form" novalidate>
+          <label for="email">Your email address</label>
+          <div class="input-row">
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required aria-describedby="email-error form-status">
+            <button class="submit-button" type="submit" aria-label="Sign up">→</button>
+          </div>
+          <p class="form-error" id="email-error" aria-live="polite"></p>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <p class="privacy-note">By subscribing, you agree to receive our newsletter. Unsubscribe at any time.</p>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
